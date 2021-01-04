@@ -1,0 +1,5 @@
+- [ ] functional dashboard with user on input
+  - [ ]  adding posts
+  - [ ]  heatmap
+  - [ ]  liking posts
+  - [ ]  commenting posts
