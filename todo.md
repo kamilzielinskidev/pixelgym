@@ -1,11 +1,3 @@
-### January
-- [ ] functional dashboard with user on input
-  - [ ]  adding posts
-  - [ ]  heatmap
-  - [ ]  liking posts
-  - [ ]  commenting posts
----
-### week 1
-- [ ] dashboard
-  - [ ] posts
-  - [ ] heatmap
+- [ ] sidebar with groups
+- [ ] top navbar with switches between posts and stats and chat
+- [ ] content
