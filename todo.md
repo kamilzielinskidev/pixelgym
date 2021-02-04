@@ -1,3 +1,7 @@
-- [ ] sidebar with groups
+- [ ] sidebar with groups mocks
 - [ ] top navbar with switches between posts and stats and chat
-- [ ] content
+- [ ] content mocks
+  - [x] feed mocks
+  - [ ] statistics mocks
+  - [ ] chat mocks
+- [ ] pwa
