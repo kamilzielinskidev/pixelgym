@@ -8,7 +8,11 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/react": "^11.1.4",
+    "@emotion/styled": "^11.0.0",
     "@hookstate/core": "^3.0.4",
+    "@material-ui/core": "^5.0.0-alpha.24",
+    "@material-ui/icons": "^4.11.2",
     "autoprefixer": "^10.1.0",
     "next": "10.0.5",
     "postcss": "^8.2.2",

@@ -9,8 +9,10 @@ class MyDocument extends Document {
 	render() {
 		return (
 			<Html>
-				<Head />
-				<body className="bg-background-primary text-text">
+				<Head>
+					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+				</Head>
+				<body style={{ backgroundColor: "#241b2f" }}>
 					<Main />
 					<NextScript />
 				</body>

@@ -1,71 +1,75 @@
-import { FC } from "react";
-import { useState } from "@hookstate/core";
-
-import { ui } from "../state";
-import { Sidebar } from "./Sidebar";
-import { MOCK_GROUPS } from "../mocks/MOCK_GROUPS";
-import { Group } from "../models";
+import React, { FC } from "react";
 import Image from "next/image";
 
-import { imageLoader } from "../utils";
-import { User } from "./icons";
+import { useState } from "@hookstate/core";
+import { Avatar, Box, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText } from "@material-ui/core";
+import { experimentalStyled as styled, Theme } from "@material-ui/core/styles";
+import { ChevronLeft, ChevronRight, Inbox, Mail } from "@material-ui/icons";
 
-const GroupComponent: FC<Group> = ({ id, imageUrl, isFollowed, name, followers }) => (
-	<a
-		href="#"
-		className="flex bg-background-secondary focus:bg-background-tertiary border-b border-background-tertiary p-4 cursor-pointer"
-	>
-		<div className="mr-4">
-			<Image
-				className="rounded-full"
-				layout="fixed"
-				loader={imageLoader}
-				src={imageUrl}
-				alt={`${name} group`}
-				width={60}
-				height={60}
-			/>
-		</div>
-		<div>
-			<div className="flex flex-col">
-				<div className="text-white font-bold mb-2">{name}</div>
-				<div className="flex items-center mb-2">
-					<User className="w-4 mr-2" />
-					{followers}
-				</div>
-				{!isFollowed ? (
-					<button className="focus:outline-none uppercase border-white border w-20">join</button>
-				) : (
-					<button className="focus:outline-none uppercase border-white border w-20">leave</button>
-				)}
-			</div>
-		</div>
-	</a>
-);
+import { closedDrawerWidth, openedDrawerWidth } from "../constants";
+import { ui } from "../state";
+import { MOCK_GROUPS } from "../mocks/MOCK_GROUPS";
+import { imageLoader } from "../utils";
+import { CSSObject } from "@emotion/react";
+
+const opening = (theme: Theme): CSSObject => ({
+	width: openedDrawerWidth,
+	transition: theme.transitions.create("width", {
+		easing: theme.transitions.easing.sharp,
+		duration: theme.transitions.duration.enteringScreen,
+	}),
+});
+
+const closing = (theme: Theme): CSSObject => ({
+	width: closedDrawerWidth,
+	transition: theme.transitions.create("width", {
+		easing: theme.transitions.easing.sharp,
+		duration: theme.transitions.duration.leavingScreen,
+	}),
+});
+
+const StyledDrawer = styled(Drawer)<{ open: boolean }>`
+	${({ open, theme }) =>
+		open
+			? { ...opening(theme), "& .MuiDrawer-paper": { ...opening(theme) } }
+			: { ...closing(theme), "& .MuiDrawer-paper": { ...closing(theme) } }}
+	white-space: nowrap;
+	& .MuiDrawer-paper {
+		overflow: hidden;
+	}
+`;
 
 export const GroupsSidebar: FC = () => {
 	const uiState = useState(ui);
+	const isOpen = uiState.isGroupsSidebarOpen.get();
+	const setIsOpen = (v: boolean) => uiState.isGroupsSidebarOpen.set(v);
+
 	return (
-		<Sidebar
-			direction="left"
-			isOpen={uiState.isGroupsSidebarOpen.get()}
-			close={() => uiState.isGroupsSidebarOpen.set(false)}
-		>
-			<div>
-				<div className="p-4">
-					<input
-						type="text"
-						className="bg-background-secondary focus:bg-background-tertiary mb-4 rounded-full text-text w-full px-4 py-2 outline-none"
-					/>
-				</div>
-				<ul>
-					{MOCK_GROUPS.map((group) => (
-						<li key={group.id}>
-							<GroupComponent {...group} />
-						</li>
-					))}
-				</ul>
-			</div>
-		</Sidebar>
+		<StyledDrawer variant="permanent" open={isOpen && true}>
+			<Box sx={{ paddingLeft: "16px" }}>
+				<IconButton color="inherit" aria-label="open drawer" onClick={() => setIsOpen(!isOpen)}>
+					{isOpen ? <ChevronLeft /> : <ChevronRight />}
+				</IconButton>
+			</Box>
+			<List>
+				{MOCK_GROUPS.map(({ id, followers, isFollowed, name, imageUrl }) => (
+					<ListItem button key={name}>
+						<ListItemIcon>
+							<Avatar>
+								<Image
+									loader={imageLoader}
+									layout="fixed"
+									src={imageUrl}
+									alt={`${imageUrl} group avatar`}
+									width={40}
+									height={40}
+								/>
+							</Avatar>
+						</ListItemIcon>
+						<ListItemText primary={name} />
+					</ListItem>
+				))}
+			</List>
+		</StyledDrawer>
 	);
 };
