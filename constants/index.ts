@@ -15,6 +15,3 @@ export const theme: ThemeOptions = {
 		},
 	},
 };
-
-export const closedDrawerWidth = 72;
-export const openedDrawerWidth = 200;

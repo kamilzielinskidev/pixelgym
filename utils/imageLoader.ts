@@ -1,2 +1,1 @@
-export const imageLoader = ({ src, width, quality }) =>
-	`https://images.unsplash.com/${src}&w=${width}&q=${quality || 50}`;
+export const imageLoader = ({ src, width, quality }) => `https://source.unsplash.com/random/${width}x${width}`;

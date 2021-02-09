@@ -2,3 +2,7 @@
   - [x] sidebar with mocked groups
   - [x] topbar with tabs
   - [ ] mocked posts
+- 6
+  - [ ] add post page mock
+  - [ ] statistics page mock
+  - [ ] chat page mock
