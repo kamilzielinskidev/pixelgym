@@ -1,8 +1,9 @@
 - 5
   - [x] sidebar with mocked groups
   - [x] topbar with tabs
-  - [ ] mocked posts
+  - [x] mocked posts
 - 6
+  - [x] speed add dial
   - [ ] add post page mock
   - [ ] statistics page mock
   - [ ] chat page mock
