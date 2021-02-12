@@ -1,3 +1,5 @@
+import Head from "next/head";
+
 import { Grid, useTheme } from "@material-ui/core";
 
 import { FeedCard, QuickAddWorkout } from "../components";
@@ -7,7 +9,11 @@ const Home = () => {
 	const theme = useTheme();
 
 	return (
-		<>
+		<div>
+			<Head>
+				<title>Feed | pixelgym</title>
+				<meta name="Description" content="Feed page for pixelgym app." />
+			</Head>
 			<Grid container spacing={2} sx={{ marginTop: theme.spacing(4), paddingY: theme.spacing(2) }}>
 				{MOCK_POSTS.map((post) => (
 					<Grid key={post.id} item xs={12}>
@@ -16,7 +22,7 @@ const Home = () => {
 				))}
 			</Grid>
 			<QuickAddWorkout />
-		</>
+		</div>
 	);
 };
 

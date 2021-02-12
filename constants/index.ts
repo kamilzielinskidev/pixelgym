@@ -15,3 +15,9 @@ export const theme: ThemeOptions = {
 		},
 	},
 };
+
+export const ROUTES_TAB_MAP: Record<number, { label: string; route: string }> = {
+	0: { label: "Feed", route: "/" },
+	1: { label: "Statistics", route: "/statistics" },
+	2: { label: "Chat", route: "/chat" },
+};

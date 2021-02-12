@@ -37,10 +37,10 @@ export const FeedCard: FC<Props> = ({ user, type, date, content }) => {
 				<Typography variant="body1">{content}</Typography>
 			</CardContent>
 			<CardActions>
-				<IconButton>
+				<IconButton aria-label="Like Feed">
 					<FavoriteBorder />
 				</IconButton>
-				<IconButton>
+				<IconButton aria-label="Commend Feed">
 					<Comment />
 				</IconButton>
 			</CardActions>

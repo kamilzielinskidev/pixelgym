@@ -34,13 +34,13 @@ export const GroupsSidebar: FC = () => {
 	return (
 		<StyledDrawer open={isOpen} onClose={() => setIsOpen(false)}>
 			<Box sx={{ paddingLeft: "16px" }}>
-				<IconButton color="inherit" aria-label="open drawer" onClick={() => setIsOpen(false)}>
+				<IconButton color="inherit" aria-label="Close Drawer" onClick={() => setIsOpen(false)}>
 					<ChevronLeft />
 				</IconButton>
 			</Box>
 			<List>
 				{MOCK_GROUPS.map(({ id, followers, isFollowed, name, imageUrl }) => (
-					<ListItem button key={name}>
+					<ListItem button aria-label={`Pick Group ${name}`} key={name}>
 						<ListItemIcon>
 							<Avatar>
 								<Image

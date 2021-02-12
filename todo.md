@@ -4,6 +4,7 @@
   - [x] mocked posts
 - 6
   - [x] speed add dial
-  - [ ] add post page mock
-  - [ ] statistics page mock
+  - [x] add post page mock
+  - [x] statistics page mock
+  - [x] make tabs bar functional
   - [ ] chat page mock

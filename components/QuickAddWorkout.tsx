@@ -24,13 +24,19 @@ export const QuickAddWorkout: FC = () => {
 					bottom: theme.spacing(2),
 					right: theme.spacing(2),
 				}}
-				ariaLabel="SpeedDial openIcon example"
+				ariaLabel="SpeedDial Add Workout"
 				icon={<SpeedDialIcon onClick={() => open && router.push("/add-training")} openIcon={<Edit />} />}
 				onClose={() => setOpen(false)}
 				onOpen={() => setOpen(true)}
 			>
 				{actions.map(({ name, icon }) => (
-					<SpeedDialAction key={name} tooltipOpen icon={icon} tooltipTitle={name} />
+					<SpeedDialAction
+						aria-label={`Quick Add Workout ${name}`}
+						key={name}
+						tooltipOpen
+						icon={icon}
+						tooltipTitle={name}
+					/>
 				))}
 			</SpeedDial>
 		</Slide>
