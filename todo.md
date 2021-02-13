@@ -7,4 +7,11 @@
   - [x] add post page mock
   - [x] statistics page mock
   - [x] make tabs bar functional
-  - [ ] chat page mock
+  - [x] chat page mock
+    - [x] fix bottom input
+- 7
+  - [ ] improve the look of chat message
+  - [ ] work on colors
+  - [ ] login page
+  - [ ] register page
+  - [ ] home page

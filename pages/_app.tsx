@@ -2,7 +2,7 @@ import { AppProps } from "next/dist/next-server/lib/router/router";
 import { useEffect } from "react";
 
 import createCache from "@emotion/cache";
-import { Container, createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
+import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
 import { GroupsSidebar, Topbar } from "../components";
 import { theme } from "../constants";
@@ -22,9 +22,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 			<CssBaseline />
 			<GroupsSidebar />
 			<Topbar />
-			<Container maxWidth="sm">
-				<Component {...pageProps} />
-			</Container>
+			<Component {...pageProps} />
 		</ThemeProvider>
 	);
 }
