@@ -21,3 +21,5 @@ export const ROUTES_TAB_MAP: Record<number, { label: string; route: string }> = 
 	1: { label: "Statistics", route: "/statistics" },
 	2: { label: "Chat", route: "/chat" },
 };
+
+export const PAGES_WITH_ACTION_LAYOUT = ["/", "/statistics", "/chat"];

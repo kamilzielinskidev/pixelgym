@@ -21,32 +21,30 @@ const Chat: FC = () => {
 				<Grid container marginTop={theme.spacing(8)} marginBottom={theme.spacing(8)}>
 					{MOCK_CHAT.map(({ content, date, user, userImg, id }) => (
 						<Grid key={id} item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
-							<Card variant="outlined">
-								<CardContent>
-									<Grid container>
-										<Grid container item xs={12}>
-											<Grid item xs={2}>
-												<Avatar>
-													<Image
-														loader={imageLoader}
-														layout="fixed"
-														src={userImg}
-														alt={`${user} user avatar`}
-														width={40}
-														height={40}
-													/>
-												</Avatar>
-											</Grid>
-											<Grid item container direction="column" xs={10}>
-												<Typography variant="caption">{user}</Typography>
-												<Typography variant="caption">{date.toLocaleTimeString()}</Typography>
-											</Grid>
+							<Card variant="outlined" sx={{ padding: theme.spacing(1) }}>
+								<Grid container wrap="nowrap">
+									<Grid item sx={{ marginRight: theme.spacing(2) }}>
+										<Avatar>
+											<Image
+												loader={imageLoader}
+												layout="fixed"
+												src={userImg}
+												alt={`${user} user avatar`}
+												width={40}
+												height={40}
+											/>
+										</Avatar>
+									</Grid>
+									<Grid item container>
+										<Grid item container justifyContent="space-between">
+											<Typography variant="caption">{user}</Typography>
+											<Typography variant="caption">{date.toLocaleTimeString()}</Typography>
 										</Grid>
-										<Grid item xs={12}>
+										<Grid item>
 											<Typography variant="body2">{content}</Typography>
 										</Grid>
 									</Grid>
-								</CardContent>
+								</Grid>
 							</Card>
 						</Grid>
 					))}

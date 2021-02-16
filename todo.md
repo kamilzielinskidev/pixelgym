@@ -10,8 +10,9 @@
   - [x] chat page mock
     - [x] fix bottom input
 - 7
-  - [ ] improve the look of chat message
+  - [x] improve the look of chat message
   - [ ] work on colors
-  - [ ] login page
-  - [ ] register page
+  - [x] login page
+  - [x] register page
+  - [x] forgot password page
   - [ ] home page

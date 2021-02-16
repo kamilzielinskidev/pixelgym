@@ -5,7 +5,8 @@ import createCache from "@emotion/cache";
 import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
 
 import { GroupsSidebar, Topbar } from "../components";
-import { theme } from "../constants";
+import { PAGES_WITH_ACTION_LAYOUT, theme } from "../constants";
+import { useRouter } from "next/router";
 
 export const cache = createCache({ key: "css", prepend: true });
 
@@ -17,11 +18,17 @@ function MyApp({ Component, pageProps }: AppProps) {
 		}
 	}, []);
 
+	const router = useRouter();
+
 	return (
 		<ThemeProvider theme={createMuiTheme(theme)}>
 			<CssBaseline />
-			<GroupsSidebar />
-			<Topbar />
+			{PAGES_WITH_ACTION_LAYOUT.includes(router.pathname) && (
+				<>
+					<GroupsSidebar />
+					<Topbar />
+				</>
+			)}
 			<Component {...pageProps} />
 		</ThemeProvider>
 	);
