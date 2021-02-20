@@ -1,14 +1,19 @@
 import { useRouter } from "next/router";
 import { FC, SyntheticEvent, useEffect } from "react";
-
 import { useState } from "@hookstate/core";
-import { AppBar, IconButton, Slide, Tab, Tabs, Toolbar, useScrollTrigger } from "@material-ui/core";
-import { Menu } from "@material-ui/icons";
+import AppBar from "@material-ui/core/AppBar";
+import IconButton from "@material-ui/core/IconButton";
+import Slide from "@material-ui/core/Slide";
+import Tab from "@material-ui/core/Tab";
+import Tabs from "@material-ui/core/Tabs";
+import Toolbar from "@material-ui/core/Toolbar";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Menu from "@material-ui/icons/Menu";
 
 import { ROUTES_TAB_MAP } from "../constants";
 import { ui, view } from "../state";
 
-export const Topbar: FC = () => {
+const Topbar: FC = () => {
 	const viewState = useState(view);
 	const router = useRouter();
 	const uiState = useState(ui);
@@ -53,3 +58,5 @@ export const Topbar: FC = () => {
 		</Slide>
 	);
 };
+
+export default Topbar;

@@ -2,7 +2,7 @@ import Document, { DocumentContext, Head, Html, Main, NextScript } from "next/do
 import React from "react";
 
 import createEmotionServer from "@emotion/server/create-instance";
-import { ServerStyleSheets } from "@material-ui/core";
+import { ServerStyleSheets } from "@material-ui/core/styles";
 
 import { cache } from "./_app";
 

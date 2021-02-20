@@ -1,9 +1,19 @@
 import { FC } from "react";
-
-import { Card, CardActions, CardContent, Grid, IconButton, Typography } from "@material-ui/core";
-import { Comment, DirectionsRun, FavoriteBorder, FitnessCenter, Pool, SvgIconComponent } from "@material-ui/icons";
+import Card from "@material-ui/core/Card";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import Grid from "@material-ui/core/Grid";
+import IconButton from "@material-ui/core/IconButton";
+import Typography from "@material-ui/core/Typography";
+import Comment from "@material-ui/icons/Comment";
+import DirectionsRun from "@material-ui/icons/DirectionsRun";
+import FavoriteBorder from "@material-ui/icons/FavoriteBorder";
+import FitnessCenter from "@material-ui/icons/FitnessCenter";
+import Pool from "@material-ui/icons/Pool";
 
 import { Post } from "../models";
+
+import type { SvgIconComponent } from "@material-ui/icons/";
 
 type Props = Post;
 
@@ -13,7 +23,7 @@ const iconMap = {
 	"swimming": Pool,
 };
 
-export const FeedCard: FC<Props> = ({ user, type, date, content }) => {
+const FeedCard: FC<Props> = ({ user, type, date, content }) => {
 	const Icon: SvgIconComponent = iconMap[type];
 	return (
 		<Card variant="outlined">
@@ -38,12 +48,14 @@ export const FeedCard: FC<Props> = ({ user, type, date, content }) => {
 			</CardContent>
 			<CardActions>
 				<IconButton aria-label="Like Feed">
-					<FavoriteBorder />
+					<FavoriteBorder /> <span hidden>like</span>
 				</IconButton>
 				<IconButton aria-label="Commend Feed">
-					<Comment />
+					<Comment /> <span hidden>comment</span>
 				</IconButton>
 			</CardActions>
 		</Card>
 	);
 };
+
+export default FeedCard;

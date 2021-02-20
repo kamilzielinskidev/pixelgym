@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-export const GoogleIcon: FC = () => {
+const GoogleIcon: FC = () => {
 	return (
 		<svg
 			id="Capa_1"
@@ -20,3 +20,5 @@ export const GoogleIcon: FC = () => {
 		</svg>
 	);
 };
+
+export default GoogleIcon;

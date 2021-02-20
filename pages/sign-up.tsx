@@ -1,10 +1,14 @@
 import Head from "next/head";
-import { FC, useState } from "react";
-
-import { Button, Container, Grid, TextField, Typography, useTheme } from "@material-ui/core";
-
-import { GoogleIcon } from "../components/icons";
 import { useRouter } from "next/router";
+import { FC, useState } from "react";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
+
+import GoogleIcon from "../components/icons/Google";
 
 const SignUp: FC = () => {
 	const theme = useTheme();
@@ -25,6 +29,7 @@ const SignUp: FC = () => {
 					</Grid>
 					<Grid item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<TextField
+							label="Email"
 							fullWidth
 							placeholder="Email"
 							type="email"
@@ -34,6 +39,7 @@ const SignUp: FC = () => {
 					</Grid>
 					<Grid item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<TextField
+							label="Password"
 							fullWidth
 							type="password"
 							placeholder="Password"
@@ -41,11 +47,11 @@ const SignUp: FC = () => {
 							onChange={({ target: { value } }) => setPassword(value)}
 						/>
 					</Grid>
-					<Grid item container justifyContent="space-between" xs={12} sx={{ marginBottom: theme.spacing(4) }}>
+					<Grid item container justifyContent="flex-end" xs={12} sx={{ marginBottom: theme.spacing(4) }}>
 						<Button aria-label="Login" variant="outlined" onClick={() => router.push("/sign-in")}>
 							sign in
 						</Button>
-						<Button aria-label="Register" variant="contained">
+						<Button aria-label="Register" variant="contained" sx={{ marginLeft: theme.spacing(2) }}>
 							register
 						</Button>
 					</Grid>

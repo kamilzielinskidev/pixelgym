@@ -1,7 +1,11 @@
 import Head from "next/head";
 import { FC, useState } from "react";
-
-import { Button, Container, Grid, TextField, Typography, useTheme } from "@material-ui/core";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles/";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 
 const SignIn: FC = () => {
 	const theme = useTheme();
@@ -20,6 +24,7 @@ const SignIn: FC = () => {
 					</Grid>
 					<Grid item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<TextField
+							label="Email"
 							fullWidth
 							placeholder="Email"
 							type="email"

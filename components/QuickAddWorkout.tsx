@@ -1,10 +1,17 @@
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
+import Slide from "@material-ui/core/Slide";
+import SpeedDial from "@material-ui/core/SpeedDial";
+import SpeedDialAction from "@material-ui/core/SpeedDialAction";
+import SpeedDialIcon from "@material-ui/core/SpeedDialIcon";
+import { useTheme } from "@material-ui/core/styles";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import DirectionsRun from "@material-ui/icons/DirectionsRun";
+import FitnessCenter from "@material-ui/icons/FitnessCenter";
+import Pool from "@material-ui/icons/Pool";
+import Edit from "@material-ui/icons/Edit";
 
-import { Slide, SpeedDial, SpeedDialAction, SpeedDialIcon, useScrollTrigger, useTheme } from "@material-ui/core";
-import { DirectionsRun, Edit, FitnessCenter, Pool } from "@material-ui/icons";
-
-export const QuickAddWorkout: FC = () => {
+const QuickAddWorkout: FC = () => {
 	const theme = useTheme();
 	const trigger = useScrollTrigger();
 	const router = useRouter();
@@ -42,3 +49,4 @@ export const QuickAddWorkout: FC = () => {
 		</Slide>
 	);
 };
+export default QuickAddWorkout;

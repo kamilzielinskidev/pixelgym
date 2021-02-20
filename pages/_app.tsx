@@ -1,12 +1,13 @@
 import { AppProps } from "next/dist/next-server/lib/router/router";
-import { useEffect } from "react";
-
-import createCache from "@emotion/cache";
-import { createMuiTheme, CssBaseline, ThemeProvider } from "@material-ui/core";
-
-import { GroupsSidebar, Topbar } from "../components";
-import { PAGES_WITH_ACTION_LAYOUT, theme } from "../constants";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+import createCache from "@emotion/cache";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+
+import GroupsSidebar from "../components/GroupsSidebar";
+import Topbar from "../components/Topbar";
+import { PAGES_WITH_ACTION_LAYOUT, theme } from "../constants";
 
 export const cache = createCache({ key: "css", prepend: true });
 

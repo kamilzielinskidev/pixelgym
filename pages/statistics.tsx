@@ -1,9 +1,13 @@
-import { format } from "date-fns";
+import format from "date-fns/format";
 import Head from "next/head";
 import { FC } from "react";
-import { Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
-
-import { Card, CardContent, Container, Grid, Typography, useTheme } from "@material-ui/core";
+import { Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts/lib";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles/";
+import Typography from "@material-ui/core/Typography";
 
 import { MOCK_AMOUNT_OF_TRAININGS } from "../mocks/MOCK_AMOUNT_OF_TRAININGS";
 import { MOCK_TYPE_OF_TRAININGS } from "../mocks/MOCK_TYPES_OT_TRAININGS";

@@ -1,19 +1,16 @@
 import Image from "next/image";
-import React, { FC } from "react";
-
+import { FC } from "react";
 import { useState } from "@hookstate/core";
-import {
-	Avatar,
-	Box,
-	Drawer,
-	experimentalStyled,
-	IconButton,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-} from "@material-ui/core";
-import { ChevronLeft } from "@material-ui/icons";
+import Avatar from "@material-ui/core/Avatar";
+import Box from "@material-ui/core/Box";
+import Drawer from "@material-ui/core/Drawer";
+import IconButton from "@material-ui/core/IconButton";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemIcon from "@material-ui/core/ListItemIcon";
+import ListItemText from "@material-ui/core/ListItemText";
+import { experimentalStyled } from "@material-ui/core/styles";
+import ChevronLeft from "@material-ui/icons/ChevronLeft";
 
 import { MOCK_GROUPS } from "../mocks/MOCK_GROUPS";
 import { ui } from "../state";
@@ -26,7 +23,7 @@ const StyledDrawer = experimentalStyled(Drawer)({
 	},
 });
 
-export const GroupsSidebar: FC = () => {
+const GroupsSidebar: FC = () => {
 	const uiState = useState(ui);
 	const isOpen = uiState.isGroupsSidebarOpen.get();
 	const setIsOpen = (v: boolean) => uiState.isGroupsSidebarOpen.set(v);
@@ -60,3 +57,5 @@ export const GroupsSidebar: FC = () => {
 		</StyledDrawer>
 	);
 };
+
+export default GroupsSidebar;

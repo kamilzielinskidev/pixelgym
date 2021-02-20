@@ -1,10 +1,15 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
+import Button from "@material-ui/core/Button";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Link from "@material-ui/core/Link";
+import { useTheme } from "@material-ui/core/styles/";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 
-import { Button, Container, Grid, Link, TextField, Typography, useTheme } from "@material-ui/core";
-
-import { GoogleIcon } from "../components/icons";
+import GoogleIcon from "../components/icons/Google";
 
 const SignIn: FC = () => {
 	const theme = useTheme();
@@ -25,6 +30,7 @@ const SignIn: FC = () => {
 					</Grid>
 					<Grid item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<TextField
+							label="Email"
 							fullWidth
 							placeholder="Email"
 							type="email"
@@ -34,6 +40,7 @@ const SignIn: FC = () => {
 					</Grid>
 					<Grid item xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<TextField
+							label="Password"
 							fullWidth
 							type="password"
 							placeholder="Password"
@@ -44,11 +51,11 @@ const SignIn: FC = () => {
 					<Grid item container justifyContent="flex-end" xs={12} sx={{ marginBottom: theme.spacing(2) }}>
 						<Link onClick={() => router.push("/forgot-password")}>Forgot password?</Link>
 					</Grid>
-					<Grid item container justifyContent="space-between" xs={12} sx={{ marginBottom: theme.spacing(4) }}>
+					<Grid item container justifyContent="flex-end" xs={12} sx={{ marginBottom: theme.spacing(4) }}>
 						<Button aria-label="Register" variant="outlined" onClick={() => router.push("/sign-up")}>
 							sign up
 						</Button>
-						<Button aria-label="Login" variant="contained">
+						<Button aria-label="Login" variant="contained" sx={{ marginLeft: theme.spacing(2) }}>
 							login
 						</Button>
 					</Grid>

@@ -15,4 +15,8 @@
   - [x] login page
   - [x] register page
   - [x] forgot password page
-  - [ ] home page
+  - [x] optimize lighthouse for auth pages (all thats possible for now)
+  - [x] home page
+- 8
+  - [ ] optimize fonts render time (self host?)
+  - [ ] nes.css ?

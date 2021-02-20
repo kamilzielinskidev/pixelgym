@@ -1,11 +1,13 @@
 import Head from "next/head";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles";
 
-import { Container, Grid, useTheme } from "@material-ui/core";
-
-import { FeedCard, QuickAddWorkout } from "../components";
+import FeedCard from "../components/FeedCard";
+import QuickAddWorkout from "../components/QuickAddWorkout";
 import { MOCK_POSTS } from "../mocks/MOCK_POSTS";
 
-const Home = () => {
+const Feed = () => {
 	const theme = useTheme();
 
 	return (
@@ -28,4 +30,4 @@ const Home = () => {
 	);
 };
 
-export default Home;
+export default Feed;

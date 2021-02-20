@@ -1,8 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import { FC, useState } from "react";
-
-import { Avatar, Button, Card, CardContent, Container, Grid, TextField, Typography, useTheme } from "@material-ui/core";
+import Avatar from "@material-ui/core/Avatar";
+import Button from "@material-ui/core/Button";
+import Card from "@material-ui/core/Card";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import { useTheme } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import Typography from "@material-ui/core/Typography";
 
 import { MOCK_CHAT } from "../mocks/MOCK_CHAT";
 import { imageLoader } from "../utils";
@@ -60,6 +66,7 @@ const Chat: FC = () => {
 				bgcolor={theme.palette.background.paper}
 			>
 				<TextField
+					label="Message"
 					size="small"
 					style={{ flex: "1 0 auto", marginRight: theme.spacing(2) }}
 					placeholder="Type a message..."
