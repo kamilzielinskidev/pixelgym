@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { FC, SyntheticEvent, useEffect } from "react";
 import { useState } from "@hookstate/core";
@@ -7,6 +8,7 @@ import Slide from "@material-ui/core/Slide";
 import Tab from "@material-ui/core/Tab";
 import Tabs from "@material-ui/core/Tabs";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Menu from "@material-ui/icons/Menu";
 
@@ -37,7 +39,7 @@ const Topbar: FC = () => {
 
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
-			<AppBar sx={{ backgroundColor: "#2a2139" }}>
+			<AppBar sx={{ backgroundColor: "#f8f8f8" }}>
 				<Toolbar variant="dense">
 					<IconButton aria-label="Open Drawer" onClick={() => setIsOpen(true)}>
 						<Menu />
@@ -49,8 +51,15 @@ const Topbar: FC = () => {
 						onChange={handleOnChange}
 						variant="scrollable"
 					>
-						{Object.values(ROUTES_TAB_MAP).map(({ label }) => (
-							<Tab key={label} label={label} />
+						{Object.values(ROUTES_TAB_MAP).map(({ label, route }) => (
+							<Tab
+								key={label}
+								icon={
+									<Link href={route}>
+										<Typography variant="button"> {label}</Typography>
+									</Link>
+								}
+							></Tab>
 						))}
 					</Tabs>
 				</Toolbar>

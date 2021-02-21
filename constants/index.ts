@@ -2,16 +2,15 @@ import { ThemeOptions } from "@material-ui/core";
 
 export const theme: ThemeOptions = {
 	palette: {
-		mode: "dark",
 		primary: {
-			main: "#00bcd4",
+			main: "#111",
 		},
 		secondary: {
-			main: "#00bcd4",
+			main: "#222",
 		},
 		background: {
-			default: "#241b2f",
-			paper: "#2a2139",
+			default: "#fafafa",
+			paper: "#f8f8f8",
 		},
 	},
 };

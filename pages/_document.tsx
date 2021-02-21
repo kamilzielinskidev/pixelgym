@@ -20,7 +20,7 @@ class MyDocument extends Document {
 				<Head>
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 				</Head>
-				<body style={{ backgroundColor: "#241b2f" }}>
+				<body style={{ backgroundColor: "#fafafa" }}>
 					<Main />
 					<NextScript />
 				</body>
