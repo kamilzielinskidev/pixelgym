@@ -11,12 +11,16 @@
     - [x] fix bottom input
 - 7
   - [x] improve the look of chat message
-  - [ ] work on colors
+  - [x] work on colors
   - [x] login page
   - [x] register page
   - [x] forgot password page
   - [x] optimize lighthouse for auth pages (all thats possible for now)
   - [x] home page
 - 8
+  - [x] forgot password link from singin page
+  - [x] user profile
+  - [ ] statistics pie phone rendering
   - [ ] optimize fonts render time (self host?)
+  - [ ] autoryzacja backend
   - [ ] nes.css ?

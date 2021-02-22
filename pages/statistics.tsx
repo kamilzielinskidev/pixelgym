@@ -1,7 +1,7 @@
 import format from "date-fns/format";
 import Head from "next/head";
 import { FC } from "react";
-import { Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts/lib";
+import { Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from "@material-ui/core/Container";
@@ -26,7 +26,7 @@ const Statistics: FC = () => {
 					<Card variant="outlined" sx={{ width: "100%" }}>
 						<CardContent sx={{ paddingRight: 0 }}>
 							<Typography variant="h5">Amount</Typography>
-							<ResponsiveContainer height={250} width="100%">
+							<ResponsiveContainer height={225} width="100%">
 								<LineChart data={MOCK_AMOUNT_OF_TRAININGS}>
 									<XAxis
 										dataKey="x"
@@ -36,6 +36,7 @@ const Statistics: FC = () => {
 									/>
 									<YAxis stroke={theme.palette.primary.main} orientation="right" />
 									<Line
+										isAnimationActive={false}
 										type="natural"
 										dataKey="y"
 										stroke={theme.palette.primary.main}
@@ -51,9 +52,10 @@ const Statistics: FC = () => {
 					<Card variant="outlined" sx={{ width: "100%" }}>
 						<CardContent sx={{ paddingRight: 0 }}>
 							<Typography variant="h5">Types</Typography>
-							<ResponsiveContainer height={250} width="100%">
+							<ResponsiveContainer height={225} width="100%">
 								<PieChart>
 									<Pie
+										isAnimationActive={false}
 										cx="50%"
 										cy="50%"
 										innerRadius={40}

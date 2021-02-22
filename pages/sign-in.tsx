@@ -4,6 +4,7 @@ import { FC, useState } from "react";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
+import MaterialLink from "@material-ui/core/Link";
 import { useTheme } from "@material-ui/core/styles/";
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
@@ -47,7 +48,9 @@ const SignIn: FC = () => {
 						/>
 					</Grid>
 					<Grid item container justifyContent="flex-end" xs={12} sx={{ marginBottom: theme.spacing(2) }}>
-						<Link href="/forgot-password">Forgot password?</Link>
+						<Link href="/forgot-password" passHref>
+							<MaterialLink>Forgot password?</MaterialLink>
+						</Link>
 					</Grid>
 					<Grid item container justifyContent="flex-end" xs={12} sx={{ marginBottom: theme.spacing(4) }}>
 						<Link href="/sign-up" passHref>
