@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import { FC, useState } from "react";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0/dist/frontend";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
@@ -81,4 +82,4 @@ const Chat: FC = () => {
 	);
 };
 
-export default Chat;
+export default withPageAuthRequired(Chat);

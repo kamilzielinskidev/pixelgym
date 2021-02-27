@@ -8,6 +8,7 @@ import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import GroupsSidebar from "../components/GroupsSidebar";
 import Topbar from "../components/Topbar";
 import { PAGES_WITH_ACTION_LAYOUT, theme } from "../constants";
+import { UserProvider } from "@auth0/nextjs-auth0";
 
 export const cache = createCache({ key: "css", prepend: true });
 
@@ -23,14 +24,16 @@ function MyApp({ Component, pageProps }: AppProps) {
 
 	return (
 		<ThemeProvider theme={createMuiTheme(theme)}>
-			<CssBaseline />
-			{PAGES_WITH_ACTION_LAYOUT.includes(router.pathname) && (
-				<>
-					<GroupsSidebar />
-					<Topbar />
-				</>
-			)}
-			<Component {...pageProps} />
+			<UserProvider>
+				<CssBaseline />
+				{PAGES_WITH_ACTION_LAYOUT.includes(router.pathname) && (
+					<>
+						<GroupsSidebar />
+						<Topbar />
+					</>
+				)}
+				<Component {...pageProps} />
+			</UserProvider>
 		</ThemeProvider>
 	);
 }

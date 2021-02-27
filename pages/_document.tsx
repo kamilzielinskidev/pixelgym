@@ -20,7 +20,7 @@ class MyDocument extends Document {
 				<Head>
 					<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 				</Head>
-				<body style={{ backgroundColor: "#fafafa" }}>
+				<body style={{ backgroundColor: "#f8f8f8" }}>
 					<Main />
 					<NextScript />
 				</body>
@@ -49,7 +49,6 @@ MyDocument.getInitialProps = async (ctx) => {
 			<style
 				key="emotion-style-tag"
 				data-emotion={`css ${styles.ids.join(" ")}`}
-				// eslint-disable-next-line react/no-danger
 				dangerouslySetInnerHTML={{ __html: styles.css }}
 			/>,
 		],

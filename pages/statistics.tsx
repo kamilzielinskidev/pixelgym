@@ -2,6 +2,7 @@ import format from "date-fns/format";
 import Head from "next/head";
 import { FC } from "react";
 import { Line, LineChart, Pie, PieChart, ResponsiveContainer, XAxis, YAxis } from "recharts";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0/dist/frontend";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Container from "@material-ui/core/Container";
@@ -93,4 +94,4 @@ const Statistics: FC = () => {
 	);
 };
 
-export default Statistics;
+export default withPageAuthRequired(Statistics);

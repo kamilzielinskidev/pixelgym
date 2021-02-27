@@ -20,7 +20,7 @@
 - 8
   - [x] forgot password link from singin page
   - [x] user profile
-  - [ ] statistics pie phone rendering
-  - [ ] optimize fonts render time (self host?)
-  - [ ] autoryzacja backend
+  - [x] statistics pie phone rendering
+  - [x] optimize fonts render time (self host?)
+  - [x] autoryzacja backend
   - [ ] nes.css ?

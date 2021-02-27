@@ -9,8 +9,8 @@ export const theme: ThemeOptions = {
 			main: "#222",
 		},
 		background: {
-			default: "#fafafa",
-			paper: "#f8f8f8",
+			default: "#f8f8f8",
+			paper: "#fafafa",
 		},
 	},
 };

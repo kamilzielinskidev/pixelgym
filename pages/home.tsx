@@ -26,25 +26,20 @@ const Home = () => {
 			</Head>
 			<Container maxWidth="sm">
 				<Grid container direction="column">
-					<Grid container item justifyContent="flex-end" sx={{ marginTop: theme.spacing(2) }}>
-						<Button aria-label="Register" variant="outlined" onClick={() => router.push("sign-up")}>
-							register
-						</Button>
-						<Button
-							aria-label="Login"
-							variant="contained"
-							sx={{ marginLeft: theme.spacing(2) }}
-							onClick={() => router.push("sign-in")}
-						>
-							login
-						</Button>
-					</Grid>
+					<Button
+						aria-label="Authorize"
+						variant="contained"
+						sx={{ marginLeft: "auto", marginTop: theme.spacing(2) }}
+						onClick={() => router.push("api/auth/login")}
+					>
+						authorize
+					</Button>
 					<Grid item sx={{ marginTop: theme.spacing(12) }}>
 						<Typography variant="h2" component="span">
 							welcome to <span style={{ color: theme.palette.primary.main }}>gymhub</span> social network
 						</Typography>
 						<Typography variant="body1">
-							We built <span style={{ color: theme.palette.primary.main }}>gymhub</span> app to help you keep in shape
+							we built <span style={{ color: theme.palette.primary.main }}>gymhub</span> app to help you keep in shape
 							and socialize with people just like <span style={{ color: theme.palette.primary.main }}>you</span>.
 						</Typography>
 					</Grid>
@@ -81,22 +76,17 @@ const Home = () => {
 						</List>
 					</Grid>
 					<Grid item sx={{ marginTop: theme.spacing(12), marginBottom: theme.spacing(12) }}>
-						<Typography variant="h6" component="span">
+						<Typography variant="h6" component="div">
 							create an account and join the <span style={{ color: theme.palette.primary.main }}>community</span>{" "}
 						</Typography>
-						<Grid container justifyContent="flex-start" sx={{ marginTop: theme.spacing(2) }}>
-							<Button aria-label="Register" variant="outlined" onClick={() => router.push("sign-up")}>
-								register
-							</Button>
-							<Button
-								aria-label="Login"
-								variant="contained"
-								sx={{ marginLeft: theme.spacing(2) }}
-								onClick={() => router.push("sign-in")}
-							>
-								login
-							</Button>
-						</Grid>
+						<Button
+							aria-label="Authorize"
+							variant="contained"
+							sx={{ marginTop: theme.spacing(2), marginLeft: "auto", marginRight: "auto", display: "block" }}
+							onClick={() => router.push("api/auth/login")}
+						>
+							authorize
+						</Button>
 					</Grid>
 				</Grid>
 			</Container>

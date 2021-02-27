@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useRouter } from "next/router";
 import { FC, useState } from "react";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0/dist/frontend";
 import Button from "@material-ui/core/Button";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
@@ -77,4 +78,4 @@ const AddTraining: FC = () => {
 	);
 };
 
-export default AddTraining;
+export default withPageAuthRequired(AddTraining);

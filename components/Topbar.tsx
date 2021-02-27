@@ -39,7 +39,7 @@ const Topbar: FC = () => {
 
 	return (
 		<Slide appear={false} direction="down" in={!trigger}>
-			<AppBar sx={{ backgroundColor: "#f8f8f8" }}>
+			<AppBar sx={{ backgroundColor: "#fafafa" }}>
 				<Toolbar variant="dense">
 					<IconButton aria-label="Open Drawer" onClick={() => setIsOpen(true)}>
 						<Menu />

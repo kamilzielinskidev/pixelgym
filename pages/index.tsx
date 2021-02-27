@@ -1,4 +1,6 @@
 import Head from "next/head";
+import { FC } from "react";
+import { withPageAuthRequired } from "@auth0/nextjs-auth0/dist/frontend";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { useTheme } from "@material-ui/core/styles";
@@ -7,7 +9,7 @@ import FeedCard from "../components/FeedCard";
 import QuickAddWorkout from "../components/QuickAddWorkout";
 import { MOCK_POSTS } from "../mocks/MOCK_POSTS";
 
-const Feed = () => {
+const Feed: FC = () => {
 	const theme = useTheme();
 
 	return (
@@ -30,4 +32,4 @@ const Feed = () => {
 	);
 };
 
-export default Feed;
+export default withPageAuthRequired(Feed);
